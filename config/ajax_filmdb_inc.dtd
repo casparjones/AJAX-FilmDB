@@ -1,0 +1,44 @@
+<!DOCTYPE film [	<!ELEMENT film (properties, people?, poster?)>
+	<!ATTLIST film id CDATA #IMPLIED>
+	<!ATTLIST film creator (AJAX-FilmDB) #REQUIRED>
+	<!ATTLIST film version CDATA #IMPLIED>
+	<!ELEMENT properties (fid?, imdb, cat, nr?, title, local?, aka?, inserted, comment?, rating?, country?, year?, runtime?, lang?, genre?, disks?, medium?, type?, container?, video?, width?, height?, format?, ratio?, audio?, channel?, herz?, lentsince?, lentto?, avail?)>
+	<!ELEMENT fid (#PCDATA)>
+	<!ELEMENT imdb (#PCDATA)>
+	<!ELEMENT cat (#PCDATA)>
+	<!ELEMENT nr (#PCDATA)>
+	<!ELEMENT title (#PCDATA)>
+	<!ELEMENT local (#PCDATA)>
+	<!ELEMENT aka (#PCDATA)>
+	<!ELEMENT inserted (#PCDATA)>
+	<!ELEMENT comment (#PCDATA)>
+	<!ELEMENT rating (#PCDATA)>
+	<!ELEMENT country (#PCDATA)>
+	<!ELEMENT year (#PCDATA)>
+	<!ELEMENT runtime (#PCDATA)>
+	<!ELEMENT lang (#PCDATA)>
+	<!ELEMENT genre (#PCDATA)>
+	<!ELEMENT disks (#PCDATA)>
+	<!ELEMENT medium (#PCDATA)>
+	<!ELEMENT type (#PCDATA)>
+	<!ELEMENT container (#PCDATA)>
+	<!ELEMENT video (#PCDATA)>
+	<!ELEMENT width (#PCDATA)>
+	<!ELEMENT height (#PCDATA)>
+	<!ELEMENT format (#PCDATA)>
+	<!ELEMENT ratio (#PCDATA)>
+	<!ELEMENT audio (#PCDATA)>
+	<!ELEMENT channel (#PCDATA)>
+	<!ELEMENT herz (#PCDATA)>
+	<!ELEMENT lentsince (#PCDATA)>
+	<!ELEMENT lentto (#PCDATA)>
+	<!ELEMENT avail (#PCDATA)>
+	<!ELEMENT people (director*, writer*, actor*)>
+	<!ELEMENT director (name, id)>
+	<!ELEMENT writer (name, id)>
+	<!ELEMENT actor (name, id)>
+	<!ELEMENT name (#PCDATA)>
+	<!ELEMENT id (#PCDATA)>
+	<!ELEMENT poster (#PCDATA)>
+	<!ATTLIST poster format (base64) #REQUIRED>
+	<!ATTLIST poster type (binary) #REQUIRED>]>

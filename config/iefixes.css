@@ -1,0 +1,45 @@
+#panel {
+	position: fixed;
+	width: 100%;
+	height: auto;
+	min-height: 16px;
+	padding: 0px;
+	margin: 0px;
+	background-color: transparent;
+	left: 0px;
+	bottom: 0px;
+	z-index:10;
+}
+#searchBox {
+	font-size:86%;
+	display:none;
+	visibility:hidden;
+}
+#help_head {
+	position: fixed;
+	vertical-align: middle;
+	padding: 0;
+	margin: 0;
+	top: 0px;
+	left: 0px;
+	width: 99%;
+	height: 3em;
+	color: #333333;
+	background-color: #bdcaac; /* dee3cb */
+	filter: Alpha(opacity=90);
+	z-index: 4;
+}
+#help_navi {
+	position: fixed;
+	top: 3em;
+	left: 0px;
+	width: 8em;
+	height: 10em;
+	background-color: #bdcaac;
+	filter: Alpha(opacity=90);
+	z-index: 4;
+}
+#subnavig li {
+	padding: 0;
+	margin: 0 0 0 0.4em;
+}
