@@ -11,13 +11,13 @@
  # Class provided by Pablo Castorino <pablo AT castorinop DOT com DOT ar>    #
  # For details, see http://projects.izzysoft.de/trac/imdbphp/wiki/imdbXML    #
  #############################################################################
- /* $Id: imdbXML.php 301 2010-01-18 23:53:53Z izzy $ */
+ /* $Id: imdbXML.php 253 2009-10-11 21:54:15Z izzy $ */
 
 // include class file
 require_once("XML/Serializer.php");
 
 /** XML Generation
- * @package IMDB
+ * @package Api
  * @class imdbXML
  * @extends XML_Serializer
  * @author Pablo Castorino (pablo AT castorinop DOT com DOT ar)
@@ -65,7 +65,7 @@ class imdbXML extends XML_Serializer {
 	function parse ($obj) {
 		// create array to be serialized
 		$class_vars = get_object_vars($obj);
-		$base_tags = array_keys(get_class_vars(get_parent_class($obj)));
+		$base_tags = array_keys(get_class_vars("imdb_base"));
 		$other_tags = array ('debug', 'maxresults', 'searchvariant','page');
 		$banned_tags = array_merge($base_tags, $other_tags);		
 

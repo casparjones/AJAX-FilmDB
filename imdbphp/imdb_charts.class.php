@@ -12,16 +12,17 @@
  # This program is free software; you can redistribute and/or modify it      #
  # under the terms of the GNU General Public License (see doc/LICENSE)       #
  #############################################################################
- /* $Id: imdb_charts.class.php 269 2009-11-24 21:20:24Z izzy $ */
+ /* $Id: imdb_charts.class.php 253 2009-10-11 21:54:15Z izzy $ */
 
- include_once (dirname(__FILE__)."/mdb_base.class.php");
+ include_once (dirname(__FILE__)."/imdb_base.class.php");
 
  #=================================================[ The IMDB Charts class ]===
  /** Obtaining the information about Moviemeter Top 10 and Weekend box office of IMDB
-  * @package IMDB
+  * @package Api
   * @class imdb_topcharts
+  * @extends imdb_base
   * @author Ricardo Silva (banzap) <banzap@gmail.com>
-  * @version $Revision: 269 $ $Date: 2009-11-24 22:20:24 +0100 (Di, 24. Nov 2009) $
+  * @version $Revision: 253 $ $Date: 2009-10-11 23:54:15 +0200 (So, 11. Okt 2009) $
   */
 
  class imdb_topcharts {
@@ -31,10 +32,10 @@
 	 * @constructor imdb_topcharts
 	 */
 	function imdb_topcharts(){
-	   $req = new MDB_Request($this->chartspage);
+	   $req = new IMDB_Request($this->chartspage);
 	   $req->sendRequest();
 	   $this->page=$req->getResponseBody();
-	   $this->revision = preg_replace('|^.*?(\d+).*$|','$1','$Revision: 269 $');
+	   $this->revision = preg_replace('|^.*?(\d+).*$|','$1','$Revision: 253 $');
 	}
  	
 	/** Get the MOVIEmeter Top 10

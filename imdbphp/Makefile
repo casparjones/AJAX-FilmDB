@@ -1,5 +1,5 @@
 # Makefile for imdbphp
-# $Id: Makefile 365 2010-04-25 13:53:27Z izzy $
+# $Id: Makefile 253 2009-10-11 21:54:15Z izzy $
 
 DESTDIR=
 prefix=/usr/local
@@ -15,7 +15,7 @@ LINKTO=$(WEBROOT)/imdbphp
 install: installdirs
 	cp -pr doc/* $(docdir)
 	$(INSTALL_DATA) *.class.php $(libdir)
-	$(INSTALL_DATA) cache.php person.php imdbXML.php movie.php search.php *.html $(datadir)
+	$(INSTALL_DATA) cache.php imdb.php imdb_person.php imdbsearch.php *.html $(datadir)
 	$(INSTALL_DATA) test/* $(datadir)/test
 	if [ ! -e $(LINKTO) ]; then ln -s $(datadir) $(LINKTO); fi
 
@@ -35,8 +35,6 @@ uninstall:
 	rm -f $(datadir)/*.html
 	rm -f $(datadir)/*.php
 	rm -rf $(datadir)/test
-	rm -f $(libdir)/browseremulator.class.php $(libdir)/imdb_movielist.class.php $(libdir)/imdbsearch.class.php $(libdir)/mdb_config.class.php $(libdir)/movieposterdb.class.php $(libdir)/pilotsearch.class.php $(libdir)/imdb_charts.class.php $(libdir)/imdb_nowplaying.class.php $(libdir)/imdb_trailers.class.php $(libdir)/mdb_request.class.php $(libdir)/person_base.class.php $(libdir)/imdb.class.php $(libdir)/imdb_person.class.php $(libdir)/mdb_base.class.php $(libdir)/movie_base.class.php $(libdir)/pilot.class.php $(libdir)/pilot_person.class.php
+	rm -f $(libdir)/imdb_base.class.php $(libdir)/imdb.class.php $(libdir)/imdb_config.class.php $(libdir)/imdb_person.class.php $(libdir)/imdb_request.class.php $(libdir)/browseremulator.class.php $(libdir)/imdb_charts.class.php $(libdir)/imdb_nowplaying.class.php $(libdir)/imdb_trailers.class.php
 	rmdir --ignore-fail-on-non-empty $(datadir)
 	rm -rf $(docdir)
-
-

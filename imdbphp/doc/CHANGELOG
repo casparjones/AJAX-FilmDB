@@ -1,199 +1,59 @@
-$Id: CHANGELOG 487 2011-12-19 20:23:59Z izzy $
+$Id: CHANGELOG 370 2010-04-26 05:18:04Z izzy $
 
-History for IMDBPHP2
-====================
+History for IMDBPHP
+===================
 
-v2.1.1 (19.12.2011)
--------------------
-+ imdb: adding new budget class
-+ imdb nowplaying: added Top-10-Boxoffice
-+ movies: added method movietype to check wheter it is a movie, tv series, ...
-* updated API reference
-! is_serial() did always return FALSE (site-change)
-* fixed a bunch of NOTICEs
-! imdb::languages() had problems with some ISO settings - hopefully fixed now.
-* sometimes imdb::genres() did not return all available genres
-
-v2.1.0 (11.10.2011)
--------------------
-! movieposterdb class was broken due to site changes at movieposterdb.com; applied a quick-hack to fix it
-! fixes due to site changes: imdb::rating, imdb::goofs
-* complete rewrite of imdb_nowplaying class (location and structure of page had changed)
-+ some improvements to episode data (see http://projects.izzysoft.de/trac/imdbphp/ticket/255 for details)
-! trailers on Moviepilot were broken due to changed URL
-! pilot: fixed mainPictures() due to API changes
-! pilot_person: fixed photos() due to API changes
-+ added basic check for pilot classes (corresponding to the IMDB checks)
-
-v2.0.7 (21.08.2011)
--------------------
-! site changes again: fixed imdb_person:name (tnx to GeorgeFive and Qvist)
-! same reason: imdb::votes(), imdb::country() and imdb::mpaa_reason()
-! same reason, just a couple of days later: imdb rating
-! imdb_person class: filmografies no longer listed movie names due to site changes
-* imdb_person class: character names w/o id are listed again in filmografies
-! IMDB started to sometimes pre- or postfix movie titles with "IMDb", becoming part of the title then
-* imdb movie: plotoutline() did not work for unrated movies
-
-v2.0.6 (08.07.2011)
--------------------
-! next IMDB site changes: ratings
-! imdb_person filmographies: quarters in years, e.g. 1924/II, lead to empty year
-* imdb::awards(): minor adjustments by Qvist
-! imdb_movielist: fixed the listing methods (were all broken by IMDB site changes some time ago)
-+ movies (imdb+pilot): Added new method languages_detailed() to get detailed lang info (name, code and comment of languages used)
-+ imdb::episodes(): Result array now also includes season and episode (numbers)
-+ movie classes: Added new method aspect_ratio to obtain the screen aspect ratio
-
-v2.0.5 (25.05.2011)
--------------------
-! IMDB-Link for person search in demo was wrong
-+ movie class: new method yearspan() for e.g. serials spanning multiple production years
-! IMDB site changes broke actors filmographies, quotes, user comments, trivia, top250
-* adaption to imdb::storyline() as suggested by an anonymous user
-
-v2.0.4 (28.12.2010)
--------------------
-! mdb_request.class.php ignored the IMDBPHP_CONFIG constant - fixed
-! they did it again - so imdb::comment_split() was broken
-! imdb photo stuff was broken
-+ runtimes and genres know have an additional source as fallback
-! imdb::votes() was broken due to site changes
-! imdb::seasons() always returned 1 (if there were seasons) for IMDB switched order
-* cleaned up imdb::prodNotes() result
-* cleaning up double-paragraphs in imdb::plotoutline()
-! person.php linked back to imdb.php instead of movie.php
-
-v2.0.3 (17.10.2010)
--------------------
-! some after-fixes for the last "big run" include imdb methods plotoutline(),
-  runtime_all()
-! same for imdb_person::name()
-* imdb::plotoutline() was taken from storyline with the recent changes - fixed it up
-+ but since we had a working storyline, that method was added as storyline()
-! imdb::mainPictures() was also broken by the last site changes - fixed
-! mdb_request class did not inherit force_agent and trigger_referer values from
-  mdb_config and thus issued PHP notices
-
-v2.0.2 (10.10.2010)
--------------------
-! imdbsearch: some search results missed the year (if it was consisting of more than a plain
-  year, e.g. something like "2001/II")
-! imdb::prodNotes: lastUpdate was broken due to a site change
-+ movies: added imdb::locations() to retrieve details on the filming locations.
-  pilot::locations() is just a wrapper to this requiring full fallback configured.
-! mpaa_reason returned wrong text (tnx to dblume for report and fix!)
-+ added method is_serial() to the movie classes to determine whether the selected
-  entry is part of a TV series
-! again site changes at IMDB - fixed imdb::title_year(), imdb::thumbphoto(), and
-  imdb::country() with code sent by moonface (tnx!)
-! imdb::languages() (and thus imdb::language() as well) had been broken - fixed.
-+ added config option to set up the user agent "manually"
-! if an actor had a too long movie list, no results where shown (there seems to be
-  a limitation in preg_match)
-! HUGE SITE CHANGES ON IMDB! Thanks to your contributions, we got many stuff fixed
-  in the imdb class: thumbphoto, ratevote, genres, cast, alsoknown, runtime_all,
-  comment, comment_split, tagline, plotoutline, keywords, mpaa, mpaa_hist, mpaa_reason, prodNotes
-! Same reason broke the imdb_person class almost completely.
-
-
-v2.0.1 (23.05.2010)
--------------------
-* imdb::awards() updated with code from its author (tnx, Qvist!)
-* imdb::alsoknow() updated with patch from Qvist (tnx again!)
-! imdb::tagline() and imdb::prodNotes() have been affected by some site changes
-! fixing some minor typos
-! imdb site changes broke imdb::releaseInfo() again
-+ movieposterdb: added method save_image to save an image to the configured photodir
-* user_agent string now taken from browser (if possible)
-* imdb::releaseInfo - country was suddenly including anchor tags due to site changes
-+ imdbsearch::results now has an additional optional parameter "series" (boolean,
-  default TRUE) to indicate whether you want TV series included with the results
-
-v2.0.0 (26.04.2010)
+v1.2.5 (26.04.2010)
 -------------------
 ! imdb::releaseInfo() was also partly affected by the last IMDB site changes
 ! another IMDB site change broke imdb::alsoknow()
-+ imdb::top250() added as provided by abe (tnx!)
-* due to a request, the constant mdbconfig::pilot_imdbfill was turned into a
-  protected property (to be accessed via mdb_config::get_pilot_imdbfill and
-  mdb_config::set_imdbfill). To enable the use of this, the new constant
-  mdb_config::pilot_imdbfallback_enabled needs to be set to TRUE
-+ pilotsearch now honors the maxresults setting
 ! imdb::quotes() had some annoying "share this quote" added due to IMDB site changes
-+ added imdb::videosites() to retrieve the external trailer links again
-! fixed the imdb_trailer class again (at least basically)
-+ pilot::trailers() and pilot::mainPictures() now deliver content from MoviePilot
-+ imdb::trailers() now also supports the "extended data" introduced by pilot::trailers():
-  Passing TRUE as parameter, instead of simply the URLs you get some additional data
-+ imdb_trailers: added support for Youtube URLs
-+ imdb::awards() has been added by Qvist (Tnx!) and tweaked by Izzy - the latter
-  then also added pilot::awards() as wrapper to it (requires FULL_ACCESS)
-* replaced mdb_config::pilot_imdbfallback_enabled by the global constant
-  PILOT_IMDBFILL - which is defined in the default mdb_config.class.php only
-  if it was not defined before
-! IMDB changed the format of the AKAs today - so imdb::alsoknow() had to be fixed
-! imdb::trivia() was broken due to site changes
-! Makefile forgot to install index.html - and to uninstall pilot_person.class.php
-! pilot: some minor adjustments concerning not-available pages
+! more fixes due to IMDB site changes
 
-v1.9.9 (24.02.2010)
+v1.2.4 (24.10.2010)
 -------------------
+! imdb::releaseInfo() did not recognize entries without day - fixed.
+! imdb_person::born() and died() have been broken by IMDB changes again - fixed.
+  Same for interviews(), articles(), pictorials() and magcovers()
+! imdb::color() has been broken by IMDB changes - also fixed. Same for
+  imdb:sound(), mpaa() and mpaa_hist()
+
+v1.2.3 (14.02.2010)
+-------------------
+! imdb::plotoutline() did not cut surrounding DIV (backport from trunk)
+! imdb::alsoknow() fixed (IMDB site changes - backport from trunk)
 * imdb::movieconnection() - fixed FollowedBy and added Follows (tnx 2 Qvist)
 * imdb::releaseInfo() now catches a few more cases (missing links)
-* imdbXML class updated with a patch from the author
-+ imdb::movieconnections() - added more connections (tnx to Qvist)
 ! IMDB Search did not work with the localized sites due to new domains used
 ! imdb_person::filmograf did not catch characters if they had no link. Due
   to changes on the IMDB sites, it in fact did no longer catch any character...
-+ pilot movie class now correctly assigns the persons IMDBID
 ! imdb_person: born() and died() missed to return the year due to IMDB site changes
 ! imdb::seasons() returned wrong season count, and imdb::episodes() got messed up on airing dates
-+ pilot_person: class added
-! imdb::releaseInfo() did not recognize entries without day - fixed.
-+ caching functionality added to the imdbsearch class
-+ pilotsearch class now stores found movies to cache
-+ *_person::movies_writer() added to get writers filmography
-! imdb_person::born() and died() have been broken by IMDB changes again - fixed.
-  Same for interviews(), articles(), pictorials() and magcovers().
-! imdb::color() has been broken by IMDB changes - also fixed. Same for
-  imdb::sound(), mpaa() and mpaa_hist()
 
-v1.9.8 (02.12.2009)
+v1.2.2 (26.11.2009)
 -------------------
-* started restructuring the classes and files to provide a core API for extensions
-+ first extension added: basic functionality for MoviePilot
-  (http://www.moviepilot.de/), supporting some movie functionality only
-+ added the pilot_imdbfill class constant to define IMDB access level for
-  complementary data from IMDB - i.e. information which is generally not
-  provided by MoviePilot can be automatically retrieved from there.
-* Updates for the APIDoc to reflect the bunch of changes
-! imdb: minor fix for releaseInfo()
-+ pilot::officialSites now contains links to the corresponding pages on Amazon,
-  IMDB, OMDB, and Zelluloid - if available
-! imdb::language() was broken
-+ movie classes: added method creator() to retrieve the creator of series
-! fixing a minor issue (array index) in imdbsearch::results()
-+ imdbsearch: added method reset() to clean up the search results array
-+ Pilot API: added pilotsearch class to search moviepilot for movies
-! imdb::officialSites() returned a bunch of internal links not belonging here
-! imdb::runtimes(), imdb::sountrack(), and mpaa_reason() was broken
-! imdb_person::filmograf was broken due to an inserted onClick() on IMDB.COM
-* imdb_person::movies_actress() was causing false alert in tests
+! fixed an backport error (PHP5 style declaration)
+! fixed runtimes() again (the IMDB guys are playing with us), and fixed mpaa_reason (both backports from trunk)
+! imdb_person::filmograf() was broken due to an inserted onClick() on IMDB.COM (backport from trunk)
 ! fixed the imdb::trailers() method. Note that IMDB now only lists their own
   videos, so the imdb_trailers class is (currently) useless.
 - removed the imdb_trailers class from checks. As IMDB seems to no longer
   list external trailers, they will either fail. The code for the class will
   remain in the repository for now - one never knows...
-+ added new method imdb::keywords_all() (to retrieve the full list). For
-  compatibility, pilot:keywords_all() has been added (aliases pilot::keywords())
-+ added new class to retrieve images from movieposterdb.com
-! imdb::plotoutline() did not cut surrounding DIV
-+ added config setting to optionally convert imdb movie information to UTF8
-! imdb::alsoknow() fixed (IMDB site changes)
-+ new class imdb_movielist added. First methods allow to retrieve a list of
-  movies for a given year and country / year and language, as well as the 10
-  most popular movies by year.
++ added new method imdb::keywords_all() (to retrieve the full list)
+
+v1.2.1 (15.11.2009)
+-------------------
+! version info was not updated in the base class
+! imdb: minor fix for releaseInfo()
+! imdb::language() was broken
++ imdb::creator() method backported from trunk
+! minor fix to imdbsearch class backported
++ imdbsearch: added method reset() to clean up the search results array
+  (backported from trunk@r257)
+! imdb::officialSites() returned a bunch of internal links not belonging here
+  (backported fix from trunk@r260)
+! imdb::runtimes() and imdb::sountrack() was broken (backported fix from trunk@r262)
 
 v1.2.0 (04.10.2009)
 -------------------

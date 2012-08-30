@@ -11,7 +11,7 @@
  # under the terms of the GNU General Public License (see doc/LICENSE)       #
  #############################################################################
 
- /* $Id: imdb_person.inc 350 2010-03-14 22:28:08Z izzy $ */
+ /* $Id: imdb_person.inc 253 2009-10-11 21:54:15Z izzy $ */
 
 require_once("imdb_person.class.php");
 require_once(dirname(__FILE__)."/helpers.inc");
@@ -46,7 +46,6 @@ page("Name");
  method($imdbp,"movies_crew");
  method($imdbp,"movies_soundtrack");
  method($imdbp,"movies_thanx");
- method($imdbp,"movies_writer");
  method($imdbp,"movies_self");
  method($imdbp,"movies_archive");
 endpage();

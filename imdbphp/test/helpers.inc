@@ -11,7 +11,7 @@
  # under the terms of the GNU General Public License (see doc/LICENSE)       #
  #############################################################################
 
- /* $Id: helpers.inc 364 2010-04-22 18:10:35Z izzy $ */
+ /* $Id: helpers.inc 253 2009-10-11 21:54:15Z izzy $ */
 
 #======================================================[ Global Variables ]===
 $methods  = 0;
@@ -42,7 +42,7 @@ function raw($text) {
 
 function page($title) {
   if (CRON) return;
-  echo "<H4 STYLE='margin-top:0;'>Checking $title page:</H4><UL>\n";
+  echo "<B>Checking $title page:</B><UL>\n";
   flush();
 }
 
@@ -70,13 +70,7 @@ function method(&$class,$name) {
   ++$GLOBALS["methods"];
   if (CRON) return;
   echo " <LI>method $name(): ";
-  if ($name=='movies_actress') { // this method somehow behaves strange here and gives false negatives
-    $dummy = new imdb_person($class->imdbid());
-    $rv = $dummy->movies_actress();
-    unset($dummy);
-  } else {
-    $rv = $class->$name();
-  }
+  $rv = $class->$name();
   if (empty($rv)||$rv==-1) fail($name);
   else pass();
   echo "</LI>\n";

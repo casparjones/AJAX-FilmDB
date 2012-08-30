@@ -11,7 +11,7 @@
  # under the terms of the GNU General Public License (see doc/LICENSE)       #
  #############################################################################
 
- /* $Id: imdb.inc 481 2011-10-12 10:45:48Z izzy $ */
+ /* $Id: imdb.inc 369 2010-04-25 22:55:51Z izzy $ */
 
 require_once("imdb.class.php");
 require_once(dirname(__FILE__)."/helpers.inc");
@@ -35,7 +35,6 @@ switch ($_REQUEST["cache"]) {
 page("Title");
  setid($imdb,"0117500");
  method($imdb,"title");
- method($imdb,"movietype");
  method($imdb,"year");
  method($imdb,"runtime");
  method($imdb,"rating");
@@ -48,15 +47,12 @@ page("Title");
  method($imdb,"tagline");
  method($imdb,"plotoutline");
  method($imdb,"photo");
- method($imdb,"mainPictures");
  method($imdb,"country");
  method($imdb,"alsoknow");
  method($imdb,"sound");
  method($imdb,"mpaa");
  method($imdb,"mpaa_hist");
  method($imdb,"mpaa_reason");
- method($imdb,"keywords");
- method($imdb,"keywords_all");
  setid($imdb,"0105946"); // Babylon 5
  method($imdb,"seasons");
  setid($imdb,"1632658"); // Running by Sight
@@ -100,9 +96,6 @@ endpage();
 page("Trailers");
  method($imdb,"trailers");
 endpage();
-page("VideoSites");
- method($imdb,"videosites");
-endpage();
 page("Trivia");
  method($imdb,"trivia");
 endpage();
@@ -130,9 +123,6 @@ page("ParentalGuide");
 endpage();
 page("OfficialSites");
  method($imdb,"officialSites");
-endpage();
-page("Awards");
- method($imdb,"awards");
 endpage();
 
 ?>
